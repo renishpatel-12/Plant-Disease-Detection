@@ -1,41 +1,155 @@
-# Plant-Disease-Detection
+# Plant Disease Detection
 
+Welcome to **Plant Disease Detection**, a modern AI-powered application that automatically classifies plant leaf health from images.
 
+## 🌿 What This Project Does
 
-### Steps to run Code
-- Clone the repository.
-```
-git clone https://github.com/noorkhokhar99/Plant-Disease-Detection.git
-```
-- Goto the cloned folder.
-```
-cd Plant-Disease-Detection
+This project uses a high-performance ensemble of deep learning models to detect and classify leaf conditions into four categories:
+- **Healthy**
+- **Multiple Diseases**
+- **Rust**
+- **Scab**
 
+The application is delivered through a beautiful and responsive **Streamlit web app** with visual probability feedback, prediction history, and export options.
+
+## ✨ Key Features
+
+- Accurate ensemble model built from **Xception + DenseNet121**
+- Streamlit-based **interactive user interface**
+- **Live image upload** and instant disease prediction
+- **Probability bars** for every class
+- **Prediction history** and analytics support
+- **CSV export** for recorded predictions
+- Built-in **feedback buttons** to mark results as helpful or incorrect
+
+## 🚀 Quick Start
+
+### 1. Create a fresh Python environment
+
+Windows:
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\activate
 ```
-- Upgrade pip with the mentioned command below.
+macOS / Linux:
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
 ```
+
+### 2. Install dependencies
+
+```bash
 pip install --upgrade pip
-```
-- Install requirements with the mentioned command below.
-```
 pip install -r requirements.txt
 ```
-- Run the code with the mentioned command below.
 
-streamlit run app.py 
- 
+### 3. Run the app
 
+```bash
+python -m streamlit run app.py
+```
 
+Then open the local URL shown in the terminal.
 
+## 📁 Recommended Project Structure
 
-### Watch the Complete Step by Step Explanation click image
+```
+Plant-Disease-Detection/
+├── app.py
+├── utils.py
+├── train_model.py
+├── prepare_data.py
+├── test_app.py
+├── requirements.txt
+├── model.h5
+├── README.md
+└── install_guide.md
+```
 
-[![Watch the video](https://github.com/noorkhokhar99/Plant-Disease-Detection/blob/main/Pyresearch.png)](https://www.youtube.com/watch?v=jJmyfiyNv04)
+> Note: Local virtual environment folders like `.venv` should not be committed to the repository.
 
+## 🧠 Model Architecture
 
-download the model from here: https://drive.google.com/drive/folders/1siPKe3pmQdBkYxD42_8-qlL19Qh1XSHV?usp=sharing
+The prediction engine is built as an ensemble:
 
+1. **Xception backbone** for strong feature extraction
+2. **DenseNet121 backbone** for complementary representation
+3. **Averaged outputs** from both models for robust final prediction
 
+The app input is resized to **512×512 pixels**, normalized, and evaluated by the ensemble before producing the final scores.
 
-If you find my videos useful,  I would love your support on Pyresearch: https://www.youtube.com/c/Pyresearch
+## 📦 Dataset Layout
 
+Use this directory structure when preparing your own training data:
+
+```
+dataset/
+├── healthy/
+├── multiple_diseases/
+├── rust/
+└── scab/
+```
+
+Each class folder should contain JPG or PNG leaf images.
+
+## 💻 Usage
+
+### Run the web application
+
+```bash
+python -m streamlit run app.py
+```
+
+### Test dependencies
+
+```bash
+python test_app.py
+```
+
+### Train a new model
+
+1. Prepare your data with `prepare_data.py`
+2. Configure training options in `train_model.py`
+3. Run:
+```bash
+python train_model.py
+```
+
+## ✅ Requirements
+
+- Python 3.8–3.11
+- TensorFlow 2.13+
+- Streamlit 1.28+
+- Pillow
+- NumPy
+- Pandas
+- Matplotlib
+- scikit-learn
+
+## 🔧 Notes
+
+- If you use local virtual environments, keep them out of version control.
+- Keep `model.h5` in the project root for the app to load predictions instantly.
+
+## 💡 Tips for Best Results
+
+- Use clear, well-lit images
+- Keep the leaf centered in the frame
+- Avoid heavy shadows and noise
+- Use 512×512 resized input for the best model performance
+
+## 🤝 Contributing
+
+1. Fork this repo
+2. Create a branch
+3. Add your enhancements
+4. Submit a pull request
+
+## 📣 Support
+
+If you enjoy this project, please star the repository and share any issues or improvement ideas.
+
+---
+
+This README is designed for clarity, speed, and real-world usage of the Plant Disease Detection app.

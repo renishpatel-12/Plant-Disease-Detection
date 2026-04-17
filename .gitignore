@@ -1,0 +1,52 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+plant_disease_env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Large files and models
+model.h5
+*.h5
+*.pkl
+*.pth
+
+# Data files
+dataset/
+output/
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.local
+
+# Misc
+Lib/
+Scripts/
+share/
+etc/
+*.log
